@@ -1,0 +1,960 @@
+/* Geral */
+:root {
+  --main-color: #3a21d9;
+  --primary-text-color: #fff;
+  --secondary-text-color: #191919;
+  --secondary-color: #868686;
+  --tertiary-color: #eff3f4;
+  --secondary-bg-color: #24105c;
+}
+
+* {
+  font-family: "Lato";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+i {
+  background-color: var(--main-color);
+  color: var(--primary-text-color);
+  font-size: 2.5rem;
+  padding: 2rem;
+}
+
+/* Cabeçalho e banner */
+#header {
+  min-height: 90vh;
+  background-image: url("../img/main_banner4.png");
+  background-size: cover;
+  background-position: center;
+  color: var(--primary-text-color);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#inner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#brand {
+  background-color: var(--main-color);
+  padding: 1rem;
+}
+
+#navbar {
+  display: flex;
+  gap: 4rem;
+  text-transform: uppercase;
+  margin-right: 2rem;
+}
+
+#navbar a {
+  color: var(--primary-text-color);
+  font-weight: bold;
+}
+
+.banner.active {
+  opacity: 1;
+}
+
+.banner {
+  max-width: 50%;
+  padding: 4rem;
+  opacity: 0;
+  position: absolute;
+  transition: 0.6s;
+}
+
+.banner h2 {
+  font-size: 4rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.banner p {
+  font-size: 1.5rem;
+}
+
+.square {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  top: 40px;
+}
+
+.dots {
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-text-color);
+}
+
+.dot.active {
+  background-color: var(--main-color);
+}
+
+/* Compensa a altura do cabeçalho quando vem de #contact */
+#contact { scroll-margin-top: 80px; } /* ajuste 80px conforme seu header */
+
+
+/* Áreas de atuação */
+.text-image-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.text-container {
+  flex: 2 1 0;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  text-align: end;
+}
+
+.section-subtitle {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--secondary-text-color);
+}
+
+.section-title {
+  color: var(secondary-color);
+  font-size: 2rem;
+}
+
+.btn {
+  padding: 1.2rem 1.8rem;
+  text-transform: uppercase;
+  font-size: smaller;
+  font-weight: bold;
+  background-color: var(--main-color);
+  color: var(--primary-text-color);
+  align-self: end;
+}
+
+.image-container {
+  flex: 1 1 300px;
+  position: relative;
+  color: var(--secondary-color);
+}
+
+.image-container i {
+  position: absolute;
+
+}
+
+#other-services img {
+  width: 100%;         /* Largura desejada */
+  height: 250px;        /* Altura desejada */
+  object-fit: cover;    /* Corta a imagem para caber sem distorcer */
+  border-radius: 8px;   /* Opcional: bordas arredondadas */
+}
+
+.primeiro-service,
+.segundo-service,
+.terceiro-service {
+  flex: 1;
+  max-width: 80%;
+  box-sizing: border-box;
+}
+
+#other-services {
+  margin-bottom: 2rem;
+  align-items: stretch;
+  object-fit: cover;
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.primeiro-service {
+  margin-bottom: 2rem;
+  position: relative;
+  top: 0;
+  padding: 1rem;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.segundo-service {
+  margin-bottom: 2rem;
+  position: relative;
+  top: 0;
+  padding: 1rem;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.terceiro-service {
+  margin-bottom: 2rem;
+  position: relative;
+  top: 0;
+  padding: 1rem;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.service-info {
+  background-color: var(--primary-text-color);
+  padding: 1.5rem 1.5rem 1.5rem;
+  min-height: 250px;
+  margin-top: -8rem;
+  z-index: 2;
+  position: relative;
+}
+
+.service h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1,2rem;
+  text-transform: uppercase;
+}
+
+/* Sobre nós */
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+#about-text {
+  background-image: url("../img/fundo_azul.png");
+  background-size: cover;
+  background-position: center;
+  color: var(--primary-text-color);
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 3rem;
+}
+
+#about-text .section-subtitle,
+#about-text .section-title {
+  color: var(--primary-text-color);
+}
+
+#about-text i {
+  background-color: var(--main-color);
+}
+
+.about-description {
+  display: flex;
+  align-items: center;
+}
+
+.about-description h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+#about-data {
+  flex: 1 1 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+#about-data .data {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: -1px;
+  margin-left: -1px;
+}
+
+#about-data .data:first-child {
+  border-bottom: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
+}
+
+#about-data .data:last-child {
+  border-top: 1px solid var(--main-color);
+  border-left: 1px solid var(--main-color);
+}
+
+#about-data .data i {
+  background-color: var(--primary-text-color);
+  color: var(--main-color);
+  font-size: 4rem;
+  padding: 0;
+}
+
+.data .number {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.data .text {
+  text-transform: uppercase;
+}
+
+/* Depoimentos */
+#testimonials {
+  display: flex;
+  align-items: center;
+}
+
+#testimonial-information {
+  padding: 3rem;
+}
+
+.autor {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author .author-name {
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-size: 1.0rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.author .author-job {
+  color: var(--secondary-text-color);
+}
+
+.author img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Colaboradores */
+#team {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+#team h2 {
+  font-size: 3rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+#team h2 span {
+  color: var(--main-color);
+}
+
+#team .square {
+  background-color: var(--tertiary-color);
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  margin-left: -50px;
+  top: -25px;
+}
+
+.employees {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.employee-name {
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+/* Contato */
+#contact {
+  background-color: var(--main-color);
+  gap: 0;
+  padding-bottom: 5rem;
+}
+
+#contact-information {
+  position: relative;
+  text-align: left;
+  padding: 3rem;
+  flex: 1 1 0;
+}
+
+#contact-information .section-subtitle {
+  color: var(--primary-text-color);
+}
+
+#contact-information i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-text-color);
+  color: var(--main-color);
+}
+
+#contact-information form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contact-information .form-control {
+  display: flex;
+  gap: 1rem;
+}
+
+#contact-information input,
+#contact-information textarea {
+  flex: 0.5;
+  padding: 1rem;
+  border: none;
+}
+
+#contact-information .btn {
+  align-self: start;
+  border: 2px solid var(--primary-text-color);
+  font-size: 1.2rem;
+  transition: 0.4s;
+}
+
+#contact-information .btn:hover {
+  background-color: var(--primary-text-color);
+  color: var(--main-color);
+}
+
+/* Rodapé */
+#footer {
+  color: var(--primary-text-color);
+  background-color: var(--secondary-bg-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 3rem 5rem;
+}
+
+#footer i {
+  font-size: 1rem;
+  padding: 0.3rem;
+}
+
+#footer a {
+  color: var(--primary-text-color);
+}
+
+.contact-info,
+.links-container {
+  width: 20%;
+}
+
+.footer-brand {
+  margin-bottom: 2rem;
+}
+
+.footer-brand h2 {
+  background-color: var(--main-color);
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+}
+
+.contact-info p i {
+  background-color: transparent;
+  padding: 0;
+  color: var(--main-color);
+}
+
+.social-networks p {
+  margin-bottom: 1rem;
+}
+
+.networks {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+#footer .networks i {
+  padding: 1rem;
+}
+
+.links-container h4 {
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.links-container nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.links-container nav a {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.phone-number {
+  display: flex;
+  border: 1px solid var(--main-color);
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.phone-info {
+  color: var(--secondary-color);
+}
+
+/* Mobile navbar */
+#menu,
+#close-menu {
+  font-size: 2rem;
+  padding: 1rem;
+  display: none;
+}
+
+#close-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#mobile-navbar {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem;
+  transition: 0.4s;
+  z-index: 5;
+}
+
+#mobile-navbar.menu-active {
+  left: 0;
+}
+
+#mobile-navbar a {
+  color: var(--primary-text-color);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--main-color);
+}
+
+/* Responsivo */
+@media (max-width: 450px) {
+  /* Geral */
+  body {
+    overflow-x: hidden;
+  }
+
+  i {
+    padding: 1.5rem;
+    font-size: 2rem;
+  }
+
+  /* navbar */
+  #navbar {
+    display: none;
+  }
+
+  #menu,
+  #close-menu {
+    display: block;
+  }
+
+  .banner {
+    max-width: 100%;
+    padding: 4rem 2rem;
+  }
+
+  .banner h2 {
+    font-size: 3rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  /* Áreas de atuação */
+  .btn {
+    align-self: initial;
+  }
+
+  .image-container {
+    flex: 1 1 100%;
+  }
+
+  #other-services {
+    flex-wrap: wrap;
+  }
+
+  /* Sobre nós */
+  #about {
+    gap: 0;
+  }
+
+  #about-text,
+  #about-data {
+    flex: 1 1 100%;
+  }
+
+  .about-description {
+    gap: 1rem;
+  }
+
+  .about-description i {
+    padding: 0;
+    min-width: 40px;
+  }
+
+  #about #about-data .data {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--secondary-text-color);
+  }
+
+  /* Depoimentos */
+  .text-container {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  /* Colaboradores */
+  #team {
+    margin-top: 2rem;
+  }
+
+  #team h2 {
+    font-size: 2.5rem;
+  }
+
+  .employees {
+    flex-wrap: wrap;
+  }
+
+  /* Contato */
+  #contact {
+    padding-bottom: 0;
+  }
+
+  #contact-information {
+    padding: 7rem 1rem;
+  }
+
+  #contact-information .form-control {
+    flex-direction: column;
+  }
+
+  #contact-information .btn {
+    align-self: auto;
+  }
+
+  /* Rodapé */
+  #footer {
+    flex-wrap: wrap;
+  }
+
+  #footer i {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .networks {
+    margin-bottom: 3rem;
+  }
+
+  .links-container {
+    margin-bottom: 1rem;
+  }
+
+  .links-container h4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-info,
+  .links-container {
+    width: 100%;
+  }
+}
+/* Base mini */
+.whatsapp-float-mini.smart {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* cor clara no topo */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease, background .3s ease, border-color .3s ease;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.whatsapp-float-mini.smart svg { width: 28px; height: 28px; }
+.whatsapp-float-mini.smart:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+}
+
+/* Efeito onda (opcional, pode remover o span.wave do HTML se não quiser) */
+.wave {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.45) 0%, transparent 70%);
+  animation: wave 2s infinite ease-out;
+  pointer-events: none;
+}
+@keyframes wave {
+  0%   { transform: scale(0.6); opacity: 0.8; }
+  70%  { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(0.6); opacity: 0; }
+}
+
+/* Estado após rolar: cor mais escura e sólida */
+.whatsapp-float-mini.smart.scrolled {
+  background-color: #128C7E;        /* tom mais fechado */
+  border-color: rgba(0,0,0,0.18);
+  box-shadow: 0 8px 18px rgba(0,0,0,.30);
+}
+
+/* Dark mode como fallback de estética geral */
+@media (prefers-color-scheme: dark) {
+  .whatsapp-float-mini.smart { box-shadow: 0 0 12px rgba(37,211,102,0.45); }
+  .whatsapp-float-mini.smart.scrolled { box-shadow: 0 0 14px rgba(18,140,126,0.55); }
+}
+
+/* Acessibilidade: reduz movimento */
+@media (prefers-reduced-motion: reduce) {
+  .wave { animation: none; }
+  .whatsapp-float-mini.smart,
+  .whatsapp-float-mini.smart:hover { transition: none; transform: none; }
+}
+
+/* ===== Layout da seção ===== */
+.contact-split{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;   /* imagem esquerda / form direita */
+  min-height: 520px;
+  border-radius: 18px;
+  overflow:hidden;
+  border:1px solid #e5e7eb;
+  background:#fff;
+}
+
+/* ===== Lado esquerdo ===== */
+.contact-split__media{ position:relative; }
+.contact-split__media img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  filter: saturate(1.05) contrast(1.02);
+}
+.contact-split__overlay{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:28px; color:#fff;
+  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 100%);
+}
+.eyebrow{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; opacity:.9; }
+.contact-split__overlay h2{ margin:.35em 0 .1em; line-height:1.15; font-size:28px; font-weight:900; }
+.muted{ color:#6b7280; }
+.contact-split__overlay .muted{ color:#e5e7eb; opacity:.9; margin-bottom:12px; }
+
+/* Botões */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  border-radius:14px; padding:12px 16px; text-decoration:none;
+  border:1px solid #111; box-shadow:0 1px 2px rgba(0,0,0,.08);
+}
+.btn.btn--ghost{ background:#fff; color:#111; }
+.btn:hover{ transform: translateY(-1px); transition:.2s; }
+
+/* ===== Lado direito (form) ===== */
+.contact-split__form{ display:flex; align-items:center; padding:28px; }
+#contact-form{
+  width:100%; max-width:560px; margin-left:auto;
+  display:flex; flex-direction:column; gap:14px;
+}
+#contact-form .form-title{ font-size:22px; font-weight:800; margin:0; }
+#contact-form .form-sub{ color:#6b7280; margin:0 0 6px; }
+
+#contact-form .form-control{ display:flex; gap:10px; }
+#contact-form .form-control input{ flex:1; }
+
+#contact-form input,
+#contact-form textarea,
+#contact-form button{
+  font: inherit; font-size: 1rem; padding: 12px 14px;
+  border:1px solid #d1d5db; border-radius:10px; outline:none; transition:.25s;
+}
+#contact-form input:focus, #contact-form textarea:focus{
+  border-color:#25d366; box-shadow:0 0 0 4px rgba(37,211,102,.12);
+}
+#contact-form textarea{ min-height:120px; resize:vertical; }
+
+#contact-form button{
+  background:#25d366; color:#fff; border:none; cursor:pointer; font-weight:700;
+  text-transform:uppercase; letter-spacing:.4px;
+}
+#contact-form button:hover{ background:#128C7E; transform: translateY(-1px); }
+
+.form-msg{ margin:0; font-size:.95rem; }
+.form-msg.success{ color:#0a7a3e; }
+.form-msg.error{ color:#b00020; }
+.tiny{ font-size:.85rem; }
+.link-cta{ font-size:.95rem; color:#111; text-underline-offset:3px; }
+
+/* ===== Responsivo ===== */
+@media (max-width: 980px){
+  .contact-split{ grid-template-columns: 1fr; }
+  .contact-split__media{ min-height:260px; }
+  #contact-form{ max-width:100%; margin:0; }
+  #contact-form .form-control{ flex-direction:column; }
+}
+/* Faz a seção ocupar a largura correta e centraliza o bloco */
+#contact.contact-split{
+  width: 100% !important;
+  max-width: 1152px;          /* ajuste se quiser mais largo (ex.: 1280px) */
+  margin: 0 auto !important;  /* centraliza no meio da página */
+  display: grid !important;
+  grid-template-columns: minmax(0,1.1fr) minmax(0,1fr);
+  gap: 0;
+  float: none !important;     /* evita herdar float de estilos antigos */
+  clear: both;
+}
+
+/* Evita “estouro”/quebra das colunas */
+#contact .contact-split__media,
+#contact .contact-split__form{
+  min-width: 0;
+}
+
+/* Se algum wrapper antigo estiver empurrando pro lado, neutraliza */
+.text-image-section,           /* caso ainda exista em volta */
+#contact {                     /* id da seção */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Espaço para não ficar colado no header fixo quando navegar por #contact */
+#contact { scroll-margin-top: 80px; } /* ajuste 80px conforme a altura do seu header */
+
+
+
+.social-links {
+  display: flex;
+  gap: 14px;
+}
+
+.social {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #1f2937; /* cor neutra base */
+  color: #fff;
+  font-size: 1.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+/* Glow animado */
+.social::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+  filter: blur(10px);
+  animation: pulse 2.5s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* efeito ao passar mouse */
+.social:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 18px currentColor;
+}
+
+/* Cores específicas */
+.social.facebook { color: #1877f2; }
+.social.instagram { 
+  color: #d6249f;
+}
+.social.linkedin { color: #0a66c2; }
+.social.whatsapp { color: #25d366; }
+
+.btn-back{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 16px; border-radius:12px; text-decoration:none;
+  font-weight:600; line-height:1; transition:all .25s ease;
+  border:1px solid transparent; cursor:pointer;
+}
+.btn-back svg{ display:block }
+
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  padding: 20px;
+  background: #0f172a;
+}
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color .2s ease;
+}
+.footer-links a:hover { color: #22c55e; }
+
